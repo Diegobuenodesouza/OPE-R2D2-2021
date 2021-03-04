@@ -1,0 +1,14 @@
+.centralizar{
+    text-align: center;
+}
+
+.pad{
+    padding-left: 70px;
+}
+
+.btn-info{
+    background-color: #dcbc81;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+}

@@ -28,8 +28,9 @@ public class TestConfig implements CommandLineRunner {
 		Departamento d1 = new Departamento(null, "Fiscal");
 		Departamento d2 = new Departamento(null, "Financeiro");
 		Departamento d3 = new Departamento(null, "Compras");
+		Departamento d4 = new Departamento(null, "Recursos Humanos");
 		
-		departamentoRepositorio.saveAll(Arrays.asList(d1,d2,d3));
+		departamentoRepositorio.saveAll(Arrays.asList(d1,d2,d3,d4));
 		
 		Usuario u1 = new Usuario(null,true,"Diego","Assistente Fiscal", "878798778", d1);
 		Usuario u2 = new Usuario(null,true,"Camila","Assistente Financeiro", "54574878", d2);

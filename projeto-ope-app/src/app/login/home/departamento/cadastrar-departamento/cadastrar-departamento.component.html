@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row box-cadastro">
+        <div class="col-12">
+            <h3 class="text-center">Informe o nome do Departamento</h3>
+            <form class="mt-5" [formGroup]="formulario">
+                <div class="form-group">
+                    <input type="text" class="form-control cadastro" placeholder="Departamento" formControlName='nomeDepartamento'>
+                </div>                
+                <button type="submit" class="btn btn-cadastro btn-lg" (click)="cadastrarDepart()">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>

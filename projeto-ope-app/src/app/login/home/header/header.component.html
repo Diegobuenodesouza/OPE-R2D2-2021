@@ -1,0 +1,28 @@
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="['/home']"  >
+      
+      Millennium Falcon</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <div class="dropdown">
+              <button class="btn btn1 dropdown-toggle" type="button" data-bs-toggle="dropdown" >
+                Cadastro
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" [routerLink]="['departamentos']">Departamentos</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/']">Colaborador</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/']">Produtos</a></li>
+              </ul>
+            </div>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </nav>
+ 

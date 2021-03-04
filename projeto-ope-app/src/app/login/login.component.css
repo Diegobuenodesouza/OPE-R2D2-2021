@@ -1,0 +1,32 @@
+
+.formLogin{
+    margin-top: 80px;
+    background-color: white;
+    width: 400px;    
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow:  5px 5px rgba(173, 173, 173, 0.432)
+}
+
+h4{
+    text-align: center;
+}
+
+.btn-primary{
+    background-image: linear-gradient(to right, rgb(0, 238, 255) , rgb(47, 0, 255));
+    border: none;
+    width: 90%;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.btn-primary, .logor2d2{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.logor2d2{
+    height: 150px;
+    
+}

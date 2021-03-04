@@ -1,0 +1,22 @@
+body{
+    background-color: rgba(236, 236, 236, 0.993);
+}
+
+.top{
+    margin-top: 60px;
+}
+
+.box-cadastro {
+    margin: 30px;
+    padding: 30px;
+}
+
+.btn-cadastro {
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #dcbc81;
+    font-weight: bold;
+    margin-top: 20px;
+}
