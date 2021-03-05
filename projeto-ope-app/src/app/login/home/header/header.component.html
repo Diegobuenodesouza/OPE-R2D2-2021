@@ -14,9 +14,22 @@
                 Cadastro
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" [routerLink]="['departamentos']">Departamentos</a></li>
-                <li><a class="dropdown-item" [routerLink]="['/']">Colaborador</a></li>
+                <li><a class="dropdown-item" [routerLink]="['cadastrardepart']">Departamentos</a></li>
+                <li><a class="dropdown-item" [routerLink]="['cadastrarusuario']">Colaborador</a></li>
                 <li><a class="dropdown-item" [routerLink]="['/']">Produtos</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item active">
+            <div class="dropdown">
+              <button class="btn btn1 dropdown-toggle" type="button" data-bs-toggle="dropdown" >
+                Consulta
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" [routerLink]="['departamentos']">Departamentos</a></li>
+                <li><a class="dropdown-item" [routerLink]="['colaboradores']">Colaboradores</a></li>
+                <li><a class="dropdown-item" [routerLink]="['']">Produtos</a></li>
               </ul>
             </div>
           </li>

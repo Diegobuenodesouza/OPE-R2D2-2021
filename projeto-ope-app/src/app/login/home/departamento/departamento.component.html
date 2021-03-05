@@ -1,20 +1,25 @@
 <div class="container ">
     <h3 class="text-center box-cadastro">Departamanentos</h3>
     
-    <table class="table table-dark">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th scope="col">Id</th>
+                <th >Id</th>
                 <th class="pad">Nome do Departamentos</th>
-                <th  class="centralizar" >Numero de colaboradores</th>   
+                <th  class="centralizar" >Numero de colaboradores</th>  
+                <th class="centralizar">Opções</th> 
                  
             </tr>
         </thead>
         <tbody  *ngFor="let dp of listaDepartamentos">
             <tr>
-                <th scope="col"> {{ dp.id}} </th>
+                <th > {{ dp.id}} </th>
                 <td class="pad"> {{ dp.nome}}</td>
-                <td class="centralizar">{{ contarColaborador(dp.id)}}</td>               
+                <td class="centralizar">{{ contarColaborador(dp.id)}}</td>        
+                <td class="centralizar">
+                    <button class="btn btn-danger" >deletar</button>
+                    <button class="btn btn-warning" [routerLink]="['/home' , 'editardepart', dp.id]">editar</button>
+                </td>         
             </tr>            
         </tbody>
         

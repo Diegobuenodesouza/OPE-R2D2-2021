@@ -12,6 +12,9 @@ import { DepartamentoComponent } from './login/home/departamento/departamento.co
 import { HttpClientModule } from '@angular/common/http';
 import { CadastrarDepartamentoComponent } from './login/home/departamento/cadastrar-departamento/cadastrar-departamento.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ColaboradoresComponent } from './login/home/colaboradores/colaboradores.component';
+import { CadastrarUsuarioComponent } from './login/home/colaboradores/cadastrar-usuario/cadastrar-usuario.component';
+import { EditarDepartamentoComponent } from './login/home/departamento/editar-departamento/editar-departamento.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     ContentComponent,
     DepartamentoComponent,
-    CadastrarDepartamentoComponent
+    CadastrarDepartamentoComponent,
+    ColaboradoresComponent,
+    CadastrarUsuarioComponent,
+    EditarDepartamentoComponent
   ],
   imports: [
     BrowserModule,

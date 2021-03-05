@@ -12,7 +12,7 @@ import { Departamentos } from 'src/app/_model/Departamentos';
 export class CadastrarDepartamentoComponent implements OnInit {
 
   formulario = new FormGroup({
-    nomeDepartamento: new FormControl('', [Validators.required])
+    nomeDepartamento: new FormControl('', [Validators.required , Validators.minLength(3)])
   })
 
   constructor(

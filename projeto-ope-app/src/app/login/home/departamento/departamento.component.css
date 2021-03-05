@@ -6,6 +6,11 @@
     padding-left: 70px;
 }
 
+.btn{
+    padding: 3px 3px;
+    margin-left: 2px;
+}
+
 .btn-info{
     background-color: #dcbc81;
     font-weight: bold;

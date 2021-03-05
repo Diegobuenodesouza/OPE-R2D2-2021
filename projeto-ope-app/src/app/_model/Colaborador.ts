@@ -2,9 +2,9 @@ import { DepartamentoComponent } from "../login/home/departamento/departamento.c
 import { Departamentos } from "./Departamentos";
 
 export class Colaborador{
-   
-   constructor(
-    public id : number,
+	public id  = null;
+
+   constructor(    
 	public ativo : boolean,
 	public nome : String,
 	public cargo : String,

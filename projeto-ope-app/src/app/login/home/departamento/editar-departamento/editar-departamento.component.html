@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row box-cadastro">
+        <div class="col-12">
+            <h3 class="text-center">Editar dados do Departamento</h3>
+            <form class="mt-5" [formGroup]="formulario">
+                <div class="form-group">
+                    <input type="text" class="form-control cadastro" placeholder="Nome do Departamento" formControlName='nome'>
+                </div>                
+                <button type="submit" class="btn btn-cadastro btn-lg"  [disabled]="!formulario.valid">Alterar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
