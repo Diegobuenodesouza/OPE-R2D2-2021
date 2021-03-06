@@ -1,1 +1,24 @@
-<p>deletar-usuario works!</p>
+<div class="modal fade" id="deleteUsuarioModal" tabindex="-1" aria-labelledby="deleteUsuarioModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header" >
+          <h5 class="modal-title" id="deleteUsuarioModalLabel">Deseja excluir o colaborador</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">          
+          <div class="alert alert-danger" role="alert" >
+         <p>Nome:  <b>{{usuario.nome}} </b> </p>   
+         <p>Cargo: <b>{{usuario.cargo}} </b> </p> 
+         <p>Departamento: <b>{{usuario.departamento.nome}}</b></p>
+          </div>  
+
+        </div>
+        <div class="modal-footer d-flex justify-content-around">
+          <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Voltar</button>
+          <button type="button" class="btn btn-danger vai-tremer" data-bs-dismiss="modal" (click)="excluirUsuario()" > Excluir</button>
+        </div>
+
+      </div>
+    </div>
+  </div>

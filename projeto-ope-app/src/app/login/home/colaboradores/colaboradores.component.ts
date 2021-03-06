@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { BuscaUsuarariosService } from 'src/app/servicos/busca-usuararios.service';
 import { Colaborador } from 'src/app/_model/Colaborador';
@@ -11,6 +11,7 @@ import { Colaborador } from 'src/app/_model/Colaborador';
 export class ColaboradoresComponent implements OnInit {
 
   list:  Colaborador[] = []
+  usuarioId: number = 1
 
   constructor(
     private consulta : BuscaUsuarariosService,
@@ -19,10 +20,16 @@ export class ColaboradoresComponent implements OnInit {
 
   ngOnInit(): void {
     this.consulta.getUsuarios().subscribe(
-      (res) => this.list = res
-    );
-    
+      (res) => {this.list = res }
+    );    
   }
+  
+  passarId(usuarioId: any){
+    this.usuarioId = usuarioId
+  }
+
+
+
 
   cadastrarColaborador(){
     this.router.navigate(['home', 'cadastrarusuario'])

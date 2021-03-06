@@ -25,4 +25,8 @@ export class BuscaUsuarariosService {
     return this.http.get(`${this.URL_USUARIOS}/${id}`)
   }
 
+  deleteUsuario(id: number): Observable<any>{
+    return this.http.delete<Colaborador>(`${this.URL_USUARIOS}/${id}`)
+  }
+
 }

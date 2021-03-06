@@ -20,7 +20,8 @@ const routes: Routes = [
     {path: 'colaboradores' , component: ColaboradoresComponent},
     {path: 'cadastrarusuario', component: CadastrarUsuarioComponent},
     { path: 'editardepart/:id' , component: EditarDepartamentoComponent},
-    {path: 'deletardepart/:id',  component: DeletarDepartamentoComponent}
+    { path: 'editarusuario/:id' , component: EditarUsuarioComponent},
+
   ]}
 ];
 

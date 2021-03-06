@@ -1,0 +1,29 @@
+.card-group{
+    margin-top: 110px;
+    
+}
+.card{
+    margin-right: 30px;
+    padding: 10px;
+    
+}
+
+.card-img-top{
+    height: 200px;
+    padding: 10px;
+    border-radius: 15%;
+    box-shadow: 1px 1px 1px rgba(114, 114, 114, 0.479);    
+}
+
+.duvidaCliente{
+    margin-top: 100px;
+    padding-right: 20px;
+}
+
+.espacoesquerda{
+    padding-left: 100px;
+}
+
+.cadastro{
+    margin-top: 10px;
+}

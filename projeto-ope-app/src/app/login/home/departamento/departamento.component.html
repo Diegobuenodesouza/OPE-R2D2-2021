@@ -17,7 +17,7 @@
                 <td class="pad"> {{ dp.nome}}</td>
                 <td class="centralizar">{{ contarColaborador(dp.id)}}</td>        
                 <td class="centralizar">
-                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="passarId(dp.id)" >deletar</button>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="passarId(dp.id)" >deletar</button>
                     <button class="btn btn-warning " [routerLink]="['/home' , 'editardepart', dp.id]">editar</button>
                 </td>         
             </tr>            

@@ -20,8 +20,9 @@
                 <td > {{ retornoAtivo(colaborador.ativo) }}</td>  
                 <td > {{ colaborador.cargo}}</td>  
                 <td > {{ colaborador.departamento.nome}}</td>   
-                <td class="centralizar">
-                    <button class="btn btn-danger"  routerLinkActive="router-link-active"  >deletar</button>
+
+                <td class="centralizar"> 
+                    <button class="btn btn-danger" (click)="passarId(colaborador.id)" data-bs-toggle="modal"   data-bs-target="#deleteUsuarioModal" >deletar</button>
                     <button class="btn btn-warning "  [routerLink]="['/home', 'editarusuario', colaborador.id]">editar</button>
                 </td>        
             </tr>            
@@ -35,3 +36,5 @@
 
      
 </div>
+
+<app-deletar-usuario [id]="usuarioId"  (atualizarLista)="ngOnInit()"></app-deletar-usuario>
