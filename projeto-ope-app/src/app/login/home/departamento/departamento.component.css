@@ -1,14 +1,11 @@
-.centralizar{
-    text-align: center;
-}
 
 .pad{
     padding-left: 70px;
 }
 
 .btn{
-    padding: 3px 3px;
-    margin-left: 2px;
+    padding: .5px 3px;
+    margin-left: 3px;
 }
 
 .btn-info{

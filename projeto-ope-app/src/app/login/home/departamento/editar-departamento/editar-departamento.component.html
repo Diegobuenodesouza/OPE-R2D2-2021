@@ -6,7 +6,7 @@
                 <div class="form-group">
                     <input type="text" class="form-control cadastro" placeholder="Nome do Departamento" formControlName='nome'>
                 </div>                
-                <button type="submit" class="btn btn-cadastro btn-lg"  [disabled]="!formulario.valid">Alterar</button>
+                <button type="submit" class="btn btn-cadastro btn-lg"  [disabled]="!formulario.valid" (click)="alterarDepartamento()">Alterar</button>
             </form>
         </div>
     </div>

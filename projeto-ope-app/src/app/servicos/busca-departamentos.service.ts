@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
 import { Departamentos } from '../_model/Departamentos';
 
 @Injectable({
@@ -23,6 +23,14 @@ export class BuscaDepartamentosService {
 
   postDepartamento(departamento: Departamentos) :  Observable<any>{
     return this.http.post(`${this.URL_DEPARTAMENTOS}`, departamento);
+  }
+
+  putDepartamento(id: number, departamento: Departamentos) : Observable<any>{
+    return this.http.put(`${this.URL_DEPARTAMENTOS}/${id}`, departamento)
+  }
+
+  deleteDepartamento(id: number)  : Observable<any>{
+    return this.http.delete<Departamentos>(`${this.URL_DEPARTAMENTOS}/${id}`);
   }
 
   

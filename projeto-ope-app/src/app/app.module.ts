@@ -15,6 +15,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ColaboradoresComponent } from './login/home/colaboradores/colaboradores.component';
 import { CadastrarUsuarioComponent } from './login/home/colaboradores/cadastrar-usuario/cadastrar-usuario.component';
 import { EditarDepartamentoComponent } from './login/home/departamento/editar-departamento/editar-departamento.component';
+import { DeletarDepartamentoComponent } from './login/home/departamento/deletar-departamento/deletar-departamento.component';
+import { EditarUsuarioComponent } from './login/home/colaboradores/editar-usuario/editar-usuario.component';
+import { DeletarUsuarioComponent } from './login/home/colaboradores/deletar-usuario/deletar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { EditarDepartamentoComponent } from './login/home/departamento/editar-de
     CadastrarDepartamentoComponent,
     ColaboradoresComponent,
     CadastrarUsuarioComponent,
-    EditarDepartamentoComponent
+    EditarDepartamentoComponent,
+    DeletarDepartamentoComponent,
+    EditarUsuarioComponent,
+    DeletarUsuarioComponent
   ],
   imports: [
     BrowserModule,

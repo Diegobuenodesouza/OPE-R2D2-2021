@@ -1,4 +1,4 @@
-import { DepartamentoComponent } from "../login/home/departamento/departamento.component";
+
 import { Departamentos } from "./Departamentos";
 
 export class Colaborador{

@@ -20,4 +20,13 @@ body{
     font-weight: bold;
     margin-top: 20px;
 }
+.centralizar{
+    text-align: center;
+}
 
+.btn-info{
+    background-color: #dcbc81;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+}

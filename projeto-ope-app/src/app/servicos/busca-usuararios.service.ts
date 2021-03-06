@@ -21,4 +21,8 @@ export class BuscaUsuarariosService {
     return this.http.post(this.URL_USUARIOS, colaborador);
   }
 
+  getUsuarioById(id: number): Observable<any>{
+    return this.http.get(`${this.URL_USUARIOS}/${id}`)
+  }
+
 }

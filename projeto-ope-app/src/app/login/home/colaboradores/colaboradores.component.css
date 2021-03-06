@@ -1,3 +1,8 @@
+
+.btn{
+    padding: .5px 3px;
+    margin-left: 3px;
+}
 .btn-info{
     background-color: #dcbc81;
     font-weight: bold;

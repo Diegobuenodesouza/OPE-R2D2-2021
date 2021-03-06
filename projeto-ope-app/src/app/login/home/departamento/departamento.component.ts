@@ -14,7 +14,7 @@ export class DepartamentoComponent implements OnInit {
 
   listaDepartamentos: any = []
   listaUsuario: any[] = []
-  
+  id: number = 1
 
   constructor(
     private buscaUsuario : BuscaUsuarariosService,
@@ -40,6 +40,10 @@ export class DepartamentoComponent implements OnInit {
     );  
   }
 
+  passarId(idDepartamento: number){
+    this.id = idDepartamento;
+  }
+
   contarColaborador(id: number) : number{
     let sum = 0;
     this.listaUsuario.forEach((colaborador: Colaborador) => {
@@ -52,9 +56,5 @@ export class DepartamentoComponent implements OnInit {
 
   cadastrarDep(){
     this.router.navigate(['home' , 'cadastrardepart'])
-
   }
-
-
-
 }

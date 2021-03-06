@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BuscaDepartamentosService } from 'src/app/servicos/busca-departamentos.service';
 import { Departamentos } from 'src/app/_model/Departamentos';
 
@@ -11,22 +11,32 @@ import { Departamentos } from 'src/app/_model/Departamentos';
 })
 export class EditarDepartamentoComponent implements OnInit {
 
+
   departamento = new Departamentos('');
+  departamentoId = 0
   formulario = new FormGroup({
-    nome : new FormControl('', [Validators.required])
+    nome : new FormControl('', [Validators.required, Validators.minLength(3)])
   })
 
   constructor(
     private route: ActivatedRoute,
-    private service: BuscaDepartamentosService
+    private service: BuscaDepartamentosService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((parametro: Params) => {
       this.service.getDepartamentoById(parametro.id).subscribe(
-         (resposta) =>  { this.departamento = resposta , this.formulario.controls.nome.setValue(this.departamento.nome) } 
+         (resposta) =>  { this.departamentoId = parametro.id, this.departamento = resposta , this.formulario.controls.nome.setValue(this.departamento.nome) } 
       )
     })
+  }
+
+  alterarDepartamento()  {
+    let dep = new Departamentos(this.formulario.value.nome)
+    this.service.putDepartamento(this.departamentoId , dep).subscribe(
+      () => this.router.navigate(['/home' , 'departamentos'])
+    );
   }
 
 }

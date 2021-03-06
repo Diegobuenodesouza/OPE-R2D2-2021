@@ -1,25 +1,22 @@
 <div class="container">
     <div class="row box-cadastro">
         <div class="col-12">
-            <h3 class="text-center">Informe os dados do colaborador</h3>
+            <h3 class="text-center">Editar dados do Colaborador</h3>
             <form class="mt-5" [formGroup]="formulario">
                 <div class="form-group">
-                    <input type="text" class="form-control cadastro" placeholder="Nome" formControlName='nome'>
-                </div> 
-                             
-               
-                
+                    <input  type="text" class="form-control cadastro"  placeholder="Nome" formControlName='nome' >
+                </div>                          
                 
                 <div class="form-group">
-                    <input type="text" class="form-control cadastro" placeholder="Cargo" formControlName='cargo'>
+                    <input type="text" class="form-control cadastro"  placeholder="Cargo" formControlName='cargo'>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control cadastro" placeholder="Telefone" formControlName='telefone'>
                 </div>               
                 
                 <select   formControlName='departamento'  class="form-select form-group cadastro"    >
-                    <option disabled>Selecione um departamento</option>
-                    <option *ngFor="let depart of lista"    [value]=depart.id > {{ depart.nome}}</option>                 
+                    <option  value="">Selecione um departamento</option>
+                    <option *ngFor="let depart of lista"    [value]=depart.id> {{ depart.nome}}</option>                 
                     
                   </select>
 
@@ -35,8 +32,9 @@
                       </div>
                 </div>
 
-                <button type="submit" class="btn btn-cadastro btn-lg" (click)="cadastrarDepart()" [disabled]=!formulario.valid>Cadastrar</button>
+                <button type="submit" class="btn btn-cadastro btn-lg" [disabled]=!formulario.valid (click)="alterarUsuario()">Alterar</button>
             </form>
         </div>
     </div>
 </div>
+

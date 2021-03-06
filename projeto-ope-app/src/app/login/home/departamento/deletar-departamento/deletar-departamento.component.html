@@ -1,0 +1,26 @@
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header" >
+          <h5 class="modal-title" id="exampleModalLabel">Deseja excluir o departamento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger" role="alert" *ngIf="sum == 0">
+          <b> {{ departamento.nome}} </b>        
+          </div>       
+          
+          <div class="alert alert-danger" role="alert" *ngIf="sum > 0">
+            O departamento <b>{{departamento.nome}}</b> não pode ser deletado, contem <b>{{ sum}}</b> colaborador         
+          </div>  
+
+        </div>
+        <div class="modal-footer d-flex justify-content-around">
+          <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Voltar</button>
+          <button type="button" class="btn btn-danger vai-tremer" data-bs-dismiss="modal"  [disabled]="sum > 0" (click)="deletarDepartamento()" > Excluir</button>
+        </div>
+
+      </div>
+    </div>
+  </div>

@@ -16,7 +16,7 @@ export class CadastrarDepartamentoComponent implements OnInit {
   })
 
   constructor(
-    private bdepar : BuscaDepartamentosService,
+    private bdepart : BuscaDepartamentosService,
     private router : Router
     ) { }
 
@@ -25,10 +25,9 @@ export class CadastrarDepartamentoComponent implements OnInit {
 
   cadastrarDepart(){
     let dep = new Departamentos(this.formulario.value.nomeDepartamento);
-    console.log(dep)
-    this.bdepar.postDepartamento(dep).subscribe(
+    this.bdepart.postDepartamento(dep).subscribe(
       () => this.router.navigate(['home', 'departamentos']),
-      () => console.log("Deu erro")
+     
     );
   }
 
