@@ -9,18 +9,24 @@ import { DeletarDepartamentoComponent } from './login/home/departamento/deletar-
 import { DepartamentoComponent } from './login/home/departamento/departamento.component';
 import { EditarDepartamentoComponent } from './login/home/departamento/editar-departamento/editar-departamento.component';
 import { HomeComponent } from './login/home/home.component';
+import { CadastrarProdutoComponent } from './login/home/produtos/cadastrar-produto/cadastrar-produto.component';
+import { EditarProdutoComponent } from './login/home/produtos/editar-produto/editar-produto.component';
+import { ProdutosComponent } from './login/home/produtos/produtos.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  {path: '' , component : LoginComponent},
-  {path: 'home' , component : HomeComponent, children: [
-    {path: '' , component : ContentComponent},
-    { path: 'departamentos' , component: DepartamentoComponent},
-    {path: 'cadastrardepart' , component: CadastrarDepartamentoComponent},
-    {path: 'colaboradores' , component: ColaboradoresComponent},
-    {path: 'cadastrarusuario', component: CadastrarUsuarioComponent},
-    { path: 'editardepart/:id' , component: EditarDepartamentoComponent},
-    { path: 'editarusuario/:id' , component: EditarUsuarioComponent},
+  { path: '' , component : LoginComponent },
+  { path: 'home' , component : HomeComponent, children: [
+    { path: '' , component : ContentComponent },
+    { path: 'departamentos' , component: DepartamentoComponent },
+    { path: 'cadastrardepart' , component: CadastrarDepartamentoComponent },
+    { path: 'colaboradores' , component: ColaboradoresComponent },
+    { path: 'cadastrarusuario', component: CadastrarUsuarioComponent },
+    { path: 'editardepart/:id' , component: EditarDepartamentoComponent },
+    { path: 'editarusuario/:id' , component: EditarUsuarioComponent },
+    { path: 'editarproduto/:id' , component: EditarProdutoComponent },
+    { path: 'produtos' , component: ProdutosComponent },
+    { path: 'cadastrarproduto' , component: CadastrarProdutoComponent },
 
   ]}
 ];

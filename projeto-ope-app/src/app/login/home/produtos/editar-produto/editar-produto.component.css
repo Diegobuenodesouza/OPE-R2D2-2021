@@ -1,0 +1,20 @@
+.cadastro {
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    border-radius: 0;
+    outline: none;
+    height: 50px;
+}
+
+.form-select{
+    margin-top: 0;
+}
+
+.form-group{
+    margin-top: 20px;
+}
+
+.form-select{
+    margin-top: 0;
+}

@@ -25,6 +25,10 @@ export class BuscaUsuarariosService {
     return this.http.get(`${this.URL_USUARIOS}/${id}`)
   }
 
+  putUsuario(id: number, colaborador: Colaborador) : Observable<any>{
+    return this.http.put(`${this.URL_USUARIOS}/${id}`, colaborador)
+  }
+
   deleteUsuario(id: number): Observable<any>{
     return this.http.delete<Colaborador>(`${this.URL_USUARIOS}/${id}`)
   }

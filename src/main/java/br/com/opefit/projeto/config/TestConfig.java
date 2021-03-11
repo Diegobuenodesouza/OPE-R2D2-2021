@@ -8,8 +8,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import br.com.opefit.projeto.entidades.Departamento;
+import br.com.opefit.projeto.entidades.Produto;
 import br.com.opefit.projeto.entidades.Usuario;
 import br.com.opefit.projeto.repositorios.DepartamentoRepositorio;
+import br.com.opefit.projeto.repositorios.ProdutoRepositorio;
 import br.com.opefit.projeto.repositorios.UsuarioRepositorio;
 
 @Configuration
@@ -21,6 +23,9 @@ public class TestConfig implements CommandLineRunner {
 	
 	@Autowired
 	private UsuarioRepositorio usuarioRepositorio;
+	
+	@Autowired
+	private ProdutoRepositorio produtoRepositorio;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -39,6 +44,13 @@ public class TestConfig implements CommandLineRunner {
 		
 		usuarioRepositorio.saveAll(Arrays.asList(u1,u2,u3,u4));
 		
+		Produto p1 = new Produto(null,"Camisa DBZ", "Vermelho", "M", "DBZ", "Animes", "Camisa do Goku SSJ 3", null);
+		Produto p2 = new Produto(null,"Camisa Naruto", "Branco", "P", "Naruto", "Animes", "Camisa do Madara Uchila", null);
+		Produto p3 = new Produto(null,"Camisa DBZ", "Branco", "G", "DBZ", "Animes", "Camisa do Vegeta SSJ 3", null);
+		Produto p4 = new Produto(null,"Camisa DBZ", "Vermelho", "M", "DBZ", "Animes", "Camisa do Majin Boo ",null);
+		Produto p5 = new Produto(null,"Camisa DBZ", "Branco", "M", "DBZ", "Animes", "Camisa do Cell",null);
+		
+		produtoRepositorio.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
 		
 	}	
 	

@@ -1,0 +1,24 @@
+<div class="modal fade" id="deleteProdutoModal" tabindex="-1" aria-labelledby="deleteProdutoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header" >
+          <h5 class="modal-title" id="deleteProdutoModalLabel">Deseja excluir o colaborador</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">          
+          <div class="alert alert-danger" role="alert" >
+         <p>Descrição:  <b> {{ produto.descricao}}</b> </p>   
+         <p>Cor: <b> {{ produto.cor}} </b> </p> 
+         <p>Categoria: <b> {{ produto.categoria}}</b></p>
+          </div>  
+
+        </div>
+        <div class="modal-footer d-flex justify-content-around">
+          <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Voltar</button>
+          <button type="button" class="btn btn-danger vai-tremer" data-bs-dismiss="modal" (click)="excluirProduto()" > Excluir</button>
+        </div>
+
+      </div>
+    </div>
+  </div>

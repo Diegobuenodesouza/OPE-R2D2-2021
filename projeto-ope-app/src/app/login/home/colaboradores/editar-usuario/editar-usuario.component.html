@@ -14,24 +14,29 @@
                     <input type="text" class="form-control cadastro" placeholder="Telefone" formControlName='telefone'>
                 </div>               
                 
-                <select   formControlName='departamento'  class="form-select form-group cadastro"    >
-                    <option  value="">Selecione um departamento</option>
-                    <option *ngFor="let depart of lista"    [value]=depart.id> {{ depart.nome}}</option>                 
+                <div class="row">
                     
-                  </select>
-
-                  <div class="checkAtivo">
-                    <label class="labelCheck ">Situação: </label>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input " type="radio"  formControlName='ativo' value=true>
-                        <label class="form-check-label" for="inlineRadio1">Ativo</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" formControlName='ativo' value=false>
-                        <label class="form-check-label" for="inlineRadio2">Desativado</label>
-                      </div>
+                    <div class="col-md-6 col-sm-6">
+                        <select  class="form-select form-group cadastro"  formControlName='departamento'  >      
+                            <option *ngFor="let depart of lista" [value]=depart.id  [selected]="depart.id === id"> {{ depart.nome}}</option>                                            
+                        </select>
+                    </div>
+                    
+                    <div class="col-md-6 col-sm-6">
+                        <div class="checkAtivo">
+                            <label class="labelCheck ">Situação: </label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input  "  type="radio"  checked  formControlName='ativo' value=true>
+                                <label class="form-check-label" for="inlineRadio1">Ativo</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input"  type="radio" formControlName='ativo'  value=false>
+                                <label class="form-check-label"   for="inlineRadio2">Desativado</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
+                
                 <button type="submit" class="btn btn-cadastro btn-lg" [disabled]=!formulario.valid (click)="alterarUsuario()">Alterar</button>
             </form>
         </div>

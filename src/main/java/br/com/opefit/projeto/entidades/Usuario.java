@@ -31,7 +31,7 @@ public class Usuario implements Serializable {
 	}
 
 	public Usuario(Long id, Boolean ativo, String nome, String cargo, String telefone, Departamento departamento) {
-		super();
+	
 		this.id = id;
 		this.ativo = ativo;
 		this.nome = nome;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BuscaDepartamentosService } from 'src/app/servicos/busca-departamentos.service';
 import { BuscaUsuarariosService } from 'src/app/servicos/busca-usuararios.service';
 import { Colaborador } from 'src/app/_model/Colaborador';
@@ -15,6 +15,7 @@ export class EditarUsuarioComponent implements OnInit {
   
   usuario : Colaborador = new Colaborador(false, '', '', '', new Departamentos(''));
   lista: Departamentos[] = []
+  id: number = 0
   
   formulario = new FormGroup({
     nome : new FormControl('', [Validators.required]),
@@ -27,7 +28,8 @@ export class EditarUsuarioComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private service: BuscaUsuarariosService,
-    private serviceDepartamento: BuscaDepartamentosService
+    private serviceDepartamento: BuscaDepartamentosService,
+    private router : Router
     ) { }
     
     ngOnInit(): void {
@@ -36,16 +38,15 @@ export class EditarUsuarioComponent implements OnInit {
       this.route.params.subscribe((parametrs: Params) => {
 
         this.service.getUsuarioById(parametrs.id).subscribe(
-          (resposta) => { this.usuario = resposta ,
-            
+          (resposta) => { this.usuario = resposta,
             this.serviceDepartamento.getDepartamentoById(resposta.departamento.id).subscribe(
               (resposta) =>  {depart = resposta, 
+                this.id = parametrs.id,
                 this.formulario.controls.nome.setValue(this.usuario.nome),
                 this.formulario.controls.ativo.setValue(this.usuario.ativo),
                 this.formulario.controls.cargo.setValue(this.usuario.cargo),
                 this.formulario.controls.telefone.setValue(this.usuario.telefone),
-                this.formulario.controls.departamento.setValue(depart.nome),
-                console.log( this.formulario.value)
+                this.formulario.controls.departamento.setValue(depart.id),               
                 this.serviceDepartamento.getDepartamentos().subscribe(
                   (resposta) => this.lista = resposta
                   )           
@@ -57,7 +58,24 @@ export class EditarUsuarioComponent implements OnInit {
           }  
 
           alterarUsuario(): void{
-           console.log( this.formulario.value)
+            let depart : Departamentos;
+            let colab : Colaborador
+
+        
+            this.serviceDepartamento.getDepartamentoById(this.formulario.value.departamento).subscribe(
+              (resposta) => { 
+                depart = resposta, 
+                colab = new Colaborador(
+                  this.formulario.value.ativo,
+                  this.formulario.value.nome,
+                  this.formulario.value.cargo,
+                  this.formulario.value.telefone,                  
+                  depart)
+                  
+                  this.service.putUsuario(this.id, colab).subscribe(
+                    () => {  this.router.navigate(['/home', 'colaboradores']) }
+                  );
+              }) 
           }
 
         }

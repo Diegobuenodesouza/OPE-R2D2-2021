@@ -1,10 +1,13 @@
 .card-group{
-    margin-top: 110px;
+    margin-top: 140px;
     
 }
 .card{
-    margin-right: 30px;
+    margin-right: 10px;
     padding: 10px;
+    box-shadow: 3px 3px 16px 2px rgb(126, 126, 126);
+    border-top-right-radius: 20px ;
+    border-top-left-radius: 20px ;
     
 }
 
@@ -12,18 +15,32 @@
     height: 200px;
     padding: 10px;
     border-radius: 15%;
-    box-shadow: 1px 1px 1px rgba(114, 114, 114, 0.479);    
+    
 }
 
 .duvidaCliente{
-    margin-top: 100px;
+    margin-top: 50px;
     padding-right: 20px;
 }
 
-.espacoesquerda{
-    padding-left: 100px;
+.espaco-esquerda{
+    padding-left: 80px;
 }
 
 .cadastro{
     margin-top: 10px;
+}
+
+.divisoria{
+    margin-top: 40px;
+    height: 5px;
+    background-color: white;
+    width: 120%;
+    margin-left: -10%;
+    
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 40px;
 }

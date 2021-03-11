@@ -1,4 +1,59 @@
 .navbar{
     height: 80px;
+    opacity: 1;
+    opacity: none;
+    border-bottom: 1px solid white;
+    box-shadow: 1px 1px 5px 6px rgba(110, 110, 110, 0.521);
+    
 }
 
+.imagem-falcon{ 
+    
+    padding: 20px;  
+    background-size: 30%;
+    margin-right: 80px;
+    background-repeat: no-repeat;
+    background-position: center;  
+    background-position: center right; 
+   
+}
+
+.filho{    
+    font-weight: 600;
+    color: black    
+}
+
+.logout{
+    background-color: rgb(211, 204, 197);
+    position: fixed;
+    right: 40px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+a:hover , a{
+    text-decoration: none;
+    color: black;
+}
+
+.btn1:hover{
+    margin-bottom: -4px;
+    border-bottom: 4px rgb(43, 43, 194) solid;
+}
+
+li{
+    margin-left: 0px;
+}
+
+.imglogout{
+    height: 25px;
+    background-image: url("../../../../assets/iconlogout.png") ;
+}
+
+.logout:hover{
+    border-bottom: 5px solid rgba(47, 0, 255, 0.788);
+    border-top: .5px solid black;
+    border-left: .5px solid black;
+    border-right: .5px solid black;
+    padding: 9px 14px;
+}
