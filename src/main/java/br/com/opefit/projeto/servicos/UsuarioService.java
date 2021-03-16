@@ -36,6 +36,7 @@ public class UsuarioService {
 	public Usuario updateUsuario(Long id, Usuario usuario) {
 		Usuario user = usuarioRepositorio.getOne(id);
 		
+		user.setNome(usuario.getNome());
 		user.setAtivo(usuario.getAtivo());
 		user.setTelefone(usuario.getTelefone());
 		user.setDepartamento(usuario.getDepartamento());

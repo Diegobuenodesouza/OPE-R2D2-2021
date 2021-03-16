@@ -1,4 +1,5 @@
 import { Component,  EventEmitter,  Input,  OnChanges,  OnInit, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 import { BuscaDepartamentosService } from 'src/app/servicos/busca-departamentos.service';
 import { BuscaUsuarariosService } from 'src/app/servicos/busca-usuararios.service';
@@ -22,6 +23,7 @@ export class DeletarDepartamentoComponent implements OnChanges {
     
     private service: BuscaDepartamentosService,
     private serviceUsuario: BuscaUsuarariosService,
+    private toastr : ToastrService
     
     
     ) { }
@@ -50,7 +52,8 @@ export class DeletarDepartamentoComponent implements OnChanges {
     
     deletarDepartamento() {      
       this.service.deleteDepartamento(this.departamentoId).subscribe(
-        () => {console.log("chegamos aqui") , this.atualizarLista.emit()}
+        () => { this.toastr.warning("Departamento deletado com sucesso!")
+          ,this.atualizarLista.emit()}
       );
       }
     }  

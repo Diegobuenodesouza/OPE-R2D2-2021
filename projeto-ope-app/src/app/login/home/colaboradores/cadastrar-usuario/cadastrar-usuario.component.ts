@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { BuscaDepartamentosService } from 'src/app/servicos/busca-departamentos.service';
 import { BuscaUsuarariosService } from 'src/app/servicos/busca-usuararios.service';
 import { Colaborador } from 'src/app/_model/Colaborador';
@@ -30,12 +31,13 @@ export class CadastrarUsuarioComponent implements OnInit {
   constructor(
     private service : BuscaDepartamentosService, 
     private serviceUsuario : BuscaUsuarariosService,
-    private router : Router
+    private router : Router,
+    private toastr : ToastrService
     ) { }
     
     ngOnInit(): void {
       this.service.getDepartamentos().subscribe(
-        (resposta) => {this.lista = resposta }
+        (resposta) => {this.lista = resposta}
           );
         }
         
@@ -54,7 +56,7 @@ export class CadastrarUsuarioComponent implements OnInit {
                 this.formulario.value.telefone,
                 departi),
                 this.serviceUsuario.postUsuario(colab).subscribe(
-                  () => this.router.navigate(['home' ,'colaboradores' ])
+                  () => {this.toastr.success('Colaborador cadastrado com sucesso!') ,this.router.navigate(['home' ,'colaboradores' ])}
                   );
                 }) 
               }

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './login/home/home.component';
@@ -22,6 +23,12 @@ import { ProdutosComponent } from './login/home/produtos/produtos.component';
 import { CadastrarProdutoComponent } from './login/home/produtos/cadastrar-produto/cadastrar-produto.component';
 import { EditarProdutoComponent } from './login/home/produtos/editar-produto/editar-produto.component';
 import { DeletarProdutoComponent } from './login/home/produtos/deletar-produto/deletar-produto.component';
+import { FornecedoresComponent } from './login/home/fornecedores/fornecedores.component';
+import { CadastrarFonecedorComponent } from './login/home/fornecedores/cadastrar-fonecedor/cadastrar-fonecedor.component';
+import { EditarFonecedorComponent } from './login/home/fornecedores/editar-fonecedor/editar-fonecedor.component';
+import { DeletarFornecedorComponent } from './login/home/fornecedores/deletar-fornecedor/deletar-fornecedor.component';
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -42,13 +49,20 @@ import { DeletarProdutoComponent } from './login/home/produtos/deletar-produto/d
     ProdutosComponent,
     CadastrarProdutoComponent,
     EditarProdutoComponent,
-    DeletarProdutoComponent
+    DeletarProdutoComponent,
+    FornecedoresComponent,
+    CadastrarFonecedorComponent,
+    EditarFonecedorComponent,
+    DeletarFornecedorComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

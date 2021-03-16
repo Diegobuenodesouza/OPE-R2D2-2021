@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { BuscaDepartamentosService } from 'src/app/servicos/busca-departamentos.service';
 import { Departamentos } from 'src/app/_model/Departamentos';
 
@@ -21,7 +22,8 @@ export class EditarDepartamentoComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private service: BuscaDepartamentosService,
-    private router: Router
+    private router: Router,
+    private toastr : ToastrService
     ) { }
 
   ngOnInit(): void {
@@ -35,7 +37,8 @@ export class EditarDepartamentoComponent implements OnInit {
   alterarDepartamento()  {
     let dep = new Departamentos(this.formulario.value.nome)
     this.service.putDepartamento(this.departamentoId , dep).subscribe(
-      () => this.router.navigate(['/home' , 'departamentos'])
+      () => { this.toastr.info('Departamento editado com sucesso!')
+         this.router.navigate(['/home' , 'departamentos'])}
     );
   }
 

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 import { ProdutoService } from 'src/app/servicos/produto.service';
 import { Produto } from 'src/app/_model/Produto';
@@ -15,7 +16,8 @@ export class DeletarProdutoComponent {
   @Output() atualizarListaProduto = new EventEmitter()
 
   constructor(
-    private serviceProdutos : ProdutoService
+    private serviceProdutos : ProdutoService,
+    private toastr : ToastrService
   ) { }
 
   ngOnChanges(){
@@ -26,7 +28,7 @@ export class DeletarProdutoComponent {
 
   excluirProduto(): void{
     this.serviceProdutos.deleteProduto(this.id).subscribe(
-      () => this.atualizarListaProduto.emit()
+      () => {this.toastr.warning('Produto deletado com sucesso!'),this.atualizarListaProduto.emit()}
     );
     
   }

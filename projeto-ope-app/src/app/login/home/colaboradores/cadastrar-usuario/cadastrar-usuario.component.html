@@ -20,9 +20,9 @@
                 <div class="row">
                     
                     <div class="col-md-6 col-sm-12">
-                        <select   formControlName='departamento'  class="form-select form-group cadastro"    >
-                            <option selected hidden>Selecione uma categoria</option>  
-                            <option *ngFor="let depart of lista" [value]='depart.id' > {{ depart.nome}}</option>                 
+                        <select   formControlName='departamento'  class="form-select form-group cadastro" > 
+                                                
+                            <option  *ngFor="let depart of lista" [value]=depart.id > {{ depart.nome}}</option>                 
                             
                         </select>
                     </div>

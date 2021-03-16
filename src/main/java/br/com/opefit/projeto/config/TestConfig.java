@@ -8,15 +8,20 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import br.com.opefit.projeto.entidades.Departamento;
+import br.com.opefit.projeto.entidades.Fornecedor;
 import br.com.opefit.projeto.entidades.Produto;
 import br.com.opefit.projeto.entidades.Usuario;
 import br.com.opefit.projeto.repositorios.DepartamentoRepositorio;
+import br.com.opefit.projeto.repositorios.FornecedorRepositorio;
 import br.com.opefit.projeto.repositorios.ProdutoRepositorio;
 import br.com.opefit.projeto.repositorios.UsuarioRepositorio;
 
 @Configuration
 @Profile("test")
 public class TestConfig implements CommandLineRunner {
+	
+	@Autowired
+	private FornecedorRepositorio fornecedorRepositorio;
 	
 	@Autowired
 	private DepartamentoRepositorio departamentoRepositorio;
@@ -51,6 +56,13 @@ public class TestConfig implements CommandLineRunner {
 		Produto p5 = new Produto(null,"Camisa DBZ", "Branco", "M", "DBZ", "Animes", "Camisa do Cell",null);
 		
 		produtoRepositorio.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
+		
+		Fornecedor f1 = new Fornecedor(null, true, "Anime Industria", "CNPJ", "123123123000110", "1199998888" ,"anime@gmail.com");
+		Fornecedor f2 = new Fornecedor(null, true, "Geek Industria", "CNPJ", "456456456000180", "1177776666" ,"geek@gmail.com");
+		Fornecedor f3 = new Fornecedor(null, true, "Fan Industria", "CNPJ", "678678678000198", "1166665555" ,"fan@gmail.com");
+		
+		fornecedorRepositorio.saveAll(Arrays.asList(f1,f2,f3));
+		
 		
 	}	
 	

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges,  Output,  SimpleChanges } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 import { BuscaUsuarariosService } from 'src/app/servicos/busca-usuararios.service';
 import { Colaborador } from 'src/app/_model/Colaborador';
@@ -16,7 +17,8 @@ export class DeletarUsuarioComponent implements OnChanges {
 
   usuario: Colaborador = new Colaborador(false,'','','', new Departamentos(''));
 
-  constructor(private service : BuscaUsuarariosService) { }
+  constructor(private service : BuscaUsuarariosService,
+    private toastr : ToastrService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.service.getUsuarioById(this.id).subscribe(
@@ -26,7 +28,7 @@ export class DeletarUsuarioComponent implements OnChanges {
 
   excluirUsuario(){
     this.service.deleteUsuario(this.id).subscribe(
-      () => { console.log("chegamos aqui"), this.atualizarLista.emit()}
+      () => { this.toastr.warning('Colaboadores deletado com sucesso!') , this.atualizarLista.emit()}
     );
   }
 

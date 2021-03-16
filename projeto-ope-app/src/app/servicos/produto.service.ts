@@ -28,4 +28,8 @@ export class ProdutoService{
     return this.http.delete<Produto>(`${this.URL_PRODUTOS}/${id}`)
   }
 
+  putFornecedor(id: number, produto : Produto) : Observable<any>{
+    return this.http.put(`${this.URL_PRODUTOS}/${id}`, produto)
+  }
+
 }

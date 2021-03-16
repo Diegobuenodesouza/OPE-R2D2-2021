@@ -37,7 +37,14 @@ public class ProdutoServico {
 		Produto user = produtoRepositorio.getOne(id);
 
 		user.setNome(produto.getNome());
-
+		user.setCor(produto.getCor());
+		user.setTamanho(produto.getTamanho());
+		user.setMarca(produto.getMarca());
+		user.setCategoria(produto.getCategoria());
+		user.setDescricao(produto.getDescricao());
+		user.setImagem(produto.getImagem());		
+		
+	
 		return produtoRepositorio.save(user);
 	}
 

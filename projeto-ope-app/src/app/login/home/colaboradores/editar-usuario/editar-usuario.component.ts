@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { BuscaDepartamentosService } from 'src/app/servicos/busca-departamentos.service';
 import { BuscaUsuarariosService } from 'src/app/servicos/busca-usuararios.service';
 import { Colaborador } from 'src/app/_model/Colaborador';
@@ -29,7 +30,8 @@ export class EditarUsuarioComponent implements OnInit {
     private route: ActivatedRoute,
     private service: BuscaUsuarariosService,
     private serviceDepartamento: BuscaDepartamentosService,
-    private router : Router
+    private router : Router,
+    private toastr : ToastrService
     ) { }
     
     ngOnInit(): void {
@@ -73,7 +75,7 @@ export class EditarUsuarioComponent implements OnInit {
                   depart)
                   
                   this.service.putUsuario(this.id, colab).subscribe(
-                    () => {  this.router.navigate(['/home', 'colaboradores']) }
+                    () => { this.toastr.info('Colaborador editado com sucesso!') ,this.router.navigate(['/home', 'colaboradores']) }
                   );
               }) 
           }

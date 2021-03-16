@@ -1,0 +1,24 @@
+<div class="modal fade" id="deleteFornecedorModal" tabindex="-1" aria-labelledby="deleteFornecedorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header" >
+          <h5 class="modal-title" id="deleteFornecedorModalLabel">Deseja excluir o fornecedor</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">          
+          <div class="alert alert-danger" role="alert" >
+         <p>nome:  <b>  {{ fornecedor.nome}} </b> </p>   
+         <p>E-mail: <b> {{fornecedor.email}}  </b> </p> 
+         <p>Tipo: <b> {{fornecedor.tipo}} </b></p>
+          </div>  
+
+        </div>
+        <div class="modal-footer d-flex justify-content-around">
+          <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Voltar</button>
+          <button type="button" class="btn btn-danger vai-tremer" data-bs-dismiss="modal" (click)="excluirFornecedor()" > Excluir</button>
+        </div>
+
+      </div>
+    </div>
+  </div>

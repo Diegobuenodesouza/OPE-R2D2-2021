@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ProdutoService } from 'src/app/servicos/produto.service';
 import { Produto } from 'src/app/_model/Produto';
 
@@ -27,7 +28,8 @@ export class CadastrarProdutoComponent implements OnInit {
 
   constructor(
     private router : Router,
-    private serviceProduto : ProdutoService
+    private serviceProduto : ProdutoService,
+    private toastr : ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -46,7 +48,7 @@ export class CadastrarProdutoComponent implements OnInit {
       this.formulario.value.imagem
     )
     this.serviceProduto.postProduto(produto).subscribe(
-      () => { this.router.navigate(['/home', 'produtos'])}
+      () => { this.toastr.success('Produto cadastrado com sucesso!'),this.router.navigate(['/home', 'produtos'])}
     );
   }
   

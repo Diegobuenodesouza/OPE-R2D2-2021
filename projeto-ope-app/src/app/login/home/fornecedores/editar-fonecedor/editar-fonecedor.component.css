@@ -1,0 +1,24 @@
+.form-group{
+    margin-top: 20px;
+}
+
+.checkAtivo{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.labelCheck{
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+
+.cadastro {
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    border-radius: 0;
+    outline: none;
+    height: 50px;
+}
